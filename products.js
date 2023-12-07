@@ -58,7 +58,7 @@ pm.addProduct({
     code: 'abc123',
     stock: 25
 });
-console.log(pm.getProducts()); 
+console.log(pm.c()); 
 console.log(pm.getProductById(1)); 
 pm.updateProduct(1, {
     title: 'producto prueba actualizado',
