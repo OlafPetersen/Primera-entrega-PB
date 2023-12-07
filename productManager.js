@@ -36,6 +36,17 @@ class ProductManager {
 
 const pm = new ProductManager('./products.json');
 
+for (let i = 1; i <= 10; i++) {
+    pm.addProduct({
+        title: `Producto ${i}`,
+        description: `Este es el producto ${i}`,
+        price: 100 * i,
+        thumbnail: `Ruta de la imagen ${i}`,
+        code: `codigo${i}`,
+        stock: 50 * i
+    });
+}
+
 app.get('/products', (req, res) => {
     const limit = req.query.limit;
     if (limit) {
@@ -57,3 +68,4 @@ app.get('/products/:id', (req, res) => {
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
 });
+
